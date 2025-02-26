@@ -27,6 +27,7 @@
     "react-photo-album": "^2.3.0",
     "react-router-dom": "6.10.0",
     "sweetalert2": "^11.7.32",
+    "yarn": "^1.22.22",
     "yet-another-react-lightbox": "^3.14.0",
     "zustand": "^4.4.4"
   },
