@@ -7,6 +7,7 @@ import Logout from './views/auth/Logout'
 import Register from './views/auth/Register'
 import StoreHeader from './views/base/StoreHeader'
 import StoreFooter from './views/base/StoreFooter'
+import PageNotFound from './views/base/PageNotFound'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path='/logout' element={<Logout />} />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
       <StoreFooter />
     </BrowserRouter>
