@@ -6,6 +6,7 @@ import Login from './views/auth/Login'
 import Logout from './views/auth/Logout'
 import Register from './views/auth/Register'
 import ForgotPassword from './views/auth/ForgotPassword'
+import CreatePassword from './views/auth/CreatePassword'
 import StoreHeader from './views/base/StoreHeader'
 import StoreFooter from './views/base/StoreFooter'
 import PageNotFound from './views/base/PageNotFound'
@@ -21,6 +22,7 @@ function App() {
         <Route path='/register' element={<Register />} />
         <Route path='/logout' element={<Logout />} />
         <Route path='/forgot-password' element={<ForgotPassword />} />
+        <Route path="/create-new-password" element={<CreatePassword />} />
         <Route path='*' element={<PageNotFound />} />
       </Routes>
       </MainWrapper>

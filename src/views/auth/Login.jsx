@@ -3,6 +3,7 @@ import { login } from '../../utils/auth';
 import { useNavigate } from 'react-router-dom';
 import { useAuthStore } from '../../store/auth';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -28,14 +29,25 @@ const Login = () => {
 
         const { error } = await login(username, password);
         if (error) {
-            alert(error);
+            Swal.fire({
+                icon: 'error',
+                title: 'Invalid Credentials',
+                text: 'Please check your email and password.',
+            });
         } else {
+            Swal.fire({
+                icon: 'success',
+                title: 'Login Successful',
+                showConfirmButton: false,
+                timer: 1500
+            });
+
             navigate('/');
             resetForm();
         }
         setIsLoading(false);
-
     };
+
     return (
         <section>
             <main className="" style={{ marginBottom: 100, marginTop: 50 }}>
