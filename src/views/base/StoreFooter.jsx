@@ -67,10 +67,12 @@ function StoreFooter() {
                 <strong>About us</strong>
               </p>
               <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque
-                ea quis molestias. Fugiat pariatur maxime quis culpa corporis vitae
-                repudiandae aliquam voluptatem veniam, est atque cumque eum delectus
-                sint!
+              Welcome to E-Commerce Store, your go-to destination for high-quality products 
+              at unbeatable prices! We are passionate about bringing you the best shopping experience, 
+              combining convenience, affordability, and top-notch customer service. Whether you're 
+              looking for the latest trends, everyday essentials, or exclusive deals, we have something 
+              for everyone. Our carefully curated collections ensure that you get only the best, with a 
+              focus on quality, reliability, and style.
               </p>
             </div>
             {/*Grid column*/}
@@ -170,9 +172,9 @@ function StoreFooter() {
           className="text-center p-3"
           style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
         >
-          © 2020 Copyright:
-          <a className="text-dark" href="https://mdbootstrap.com/">
-            MDBootstrap.com
+          © 2025 Copyright:  
+          <a className="text-dark" href="https://github.com/abhishek-T99">
+            Abhishek Timilsina
           </a>
         </div>
         {/* Copyright */}

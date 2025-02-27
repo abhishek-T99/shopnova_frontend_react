@@ -15,8 +15,6 @@ function StoreHeader() {
         state.user,
     ]);
 
-    console.log("user().vendor_id", user().vendor_id);
-
     const navigate = useNavigate()
 
     const handleSearchChange = (event) => {
@@ -32,28 +30,13 @@ function StoreHeader() {
         <div>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div className="container">
-                    <Link className="navbar-brand" to="/">Desphixs Test</Link>
+                    <Link className="navbar-brand me-4" to="/">E-Commerce Store</Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon" />
                     </button>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
+
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-
-                            {/* <li className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
-                                    Pages
-                                </a>
-                                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a className="dropdown-item" href="#">About Us</a></li>
-                                    <li><a className="dropdown-item" href="#">Contact Us</a></li>
-                                    <li><a className="dropdown-item" href="#">Blog </a></li>
-                                    <li><a className="dropdown-item" href="#">Changelog</a></li>
-                                    <li><a className="dropdown-item" href="#">Terms & Condition</a></li>
-                                    <li><a className="dropdown-item" href="#">Cookie Policy</a></li>
-
-                                </ul>
-                            </li> */}
-
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
                                     Account
@@ -83,9 +66,9 @@ function StoreHeader() {
                                     <li><Link className="dropdown-item" to="/vendor/settings/"> <i className='fas fa-gear fa-spin'></i> Settings</Link></li>
                                 </ul>
                             </li>
-
                         </ul>
-                        <div className="d-flex">
+
+                        <div className="d-flex me-4">
                             <input onChange={handleSearchChange} name='search' className="form-control me-2" type="text" placeholder="Search" aria-label="Search" />
                             <button onClick={handleSearchSubmit} className="btn btn-outline-success me-2" type="submit">Search</button>
                         </div>
