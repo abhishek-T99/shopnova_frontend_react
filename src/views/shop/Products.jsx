@@ -36,7 +36,7 @@ function Products() {
     const [colorValue, setColorValue] = useState("No Color")
     const [sizeValue, setSizeValue] = useState("No Size")
     const [qtyValue, setQtyValue] = useState(1)
-    // let [cartCount, setCartCount] = useContext(CartContext);
+    let [cartCount, setCartCount] = useContext(CartContext);
 
     // Pagination
     // Define the number of items to be displayed per page
@@ -245,7 +245,7 @@ function Products() {
                             <section className="text-center">
                                 <div className="row">
                                     {currentItems.map((product, index) => (
-                                        <div className="col-lg-4 col-md-12 mb-4" key={index.id}>
+                                        <div className="col-lg-4 col-md-12 mb-4" key={index.id || index}>
                                             <div className="card">
                                                 <div
                                                     className="bg-image hover-zoom ripple"
@@ -454,7 +454,7 @@ function Products() {
                                 </div>
                             </div>
                         </section>
-                        
+
                         <div className="d-flex justify-content-center">
                             {category.map((c, index) => (
                                 <div 
@@ -487,7 +487,7 @@ function Products() {
                             <div className="container">
                                 <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                                     {featuredProducts.map((product, index) => (
-                                        <div className="col-lg-4 col-md-12 mb-4" key={index.id}>
+                                        <div className="col-lg-4 col-md-12 mb-4" key={index.id || index}>
                                             <div className="card">
                                                 <Link to={`/detail/${product.slug}`}>
                                                         <img
