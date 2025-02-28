@@ -36,7 +36,7 @@ function Products() {
     const [colorValue, setColorValue] = useState("No Color")
     const [sizeValue, setSizeValue] = useState("No Size")
     const [qtyValue, setQtyValue] = useState(1)
-    let [cartCount, setCartCount] = useContext(CartContext);
+    // let [cartCount, setCartCount] = useContext(CartContext);
 
     // Pagination
     // Define the number of items to be displayed per page
@@ -216,9 +216,13 @@ function Products() {
                                     </div>
                                 </div>
                             </section>
+
                             <div className="d-flex justify-content-center">
                                 {category.map((c, index) => (
-                                    <div className="align-items-center d-flex flex-column" style={{ background: "#e8e8e8", marginLeft: "10px", borderRadius: "10px", padding: "30px" }}>
+                                    <div key={c.id || index}  // 🔹 Added unique key here
+                                        className="align-items-center d-flex flex-column" 
+                                        style={{ background: "#e8e8e8", marginLeft: "10px", borderRadius: "10px", padding: "30px" }}>
+                                        
                                         <img src={c.image}
                                             alt=""
                                             style={{ width: "80px", height: "80px", objectFit: "cover" }}
@@ -226,7 +230,6 @@ function Products() {
                                         <p><a href="" className='text-dark'>{c.title}</a></p>
                                     </div>
                                 ))}
-
                             </div>
 
                             <section className="text-center container">
@@ -451,18 +454,25 @@ function Products() {
                                 </div>
                             </div>
                         </section>
+                        
                         <div className="d-flex justify-content-center">
                             {category.map((c, index) => (
-                                <div className="align-items-center d-flex flex-column" style={{ background: "#e8e8e8", marginLeft: "10px", borderRadius: "10px", padding: "30px" }}>
-                                    <img src={c.image}
-                                        alt=""
-                                        style={{ width: "80px", height: "80px", objectFit: "cover" }}
+                                <div 
+                                    key={c.id || index}  // 🔹 Added a unique key here (use c.id if available)
+                                    className="align-items-center d-flex flex-column" 
+                                    style={{ background: "#e8e8e8", marginLeft: "10px", borderRadius: "10px", padding: "30px" }}
+                                >
+                                    <img 
+                                        src={c.image} 
+                                        alt="" 
+                                        style={{ width: "80px", height: "80px", objectFit: "cover" }} 
                                     />
                                     <p><a href="" className='text-dark'>{c.title}</a></p>
                                 </div>
                             ))}
-
                         </div>
+
+
                         <section className="text-center container mt-5">
                             <div className="row py-lg-5">
                                 <div className="col-lg-6 col-md-8 mx-auto">

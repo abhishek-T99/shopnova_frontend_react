@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Routes, Route, BrowserRouter } from 'react-router-dom'
 
+import Home from './views/shop/Home'
 import MainWrapper from './layouts/MainWrapper'
 import Login from './views/auth/Login'
 import Logout from './views/auth/Logout'
@@ -17,7 +18,7 @@ function App() {
       <StoreHeader />
       <MainWrapper>
       <Routes>
-        <Route path='/' element={<h1>Homepage</h1>} />
+        <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
         <Route path='/logout' element={<Logout />} />
