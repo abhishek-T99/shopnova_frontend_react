@@ -17,6 +17,7 @@ import StoreFooter from './views/base/StoreFooter'
 import PageNotFound from './views/base/PageNotFound'
 import ProductDetail from './views/shop/ProductDetail'
 import { CartContext } from './views/plugin/Context'
+import Cart  from './views/shop/Cart'
 
 function App() {
 
@@ -49,6 +50,7 @@ function App() {
 
               {/* Store routes */}
               <Route path='/detail/:slug' element={<ProductDetail />} />
+              <Route path='/cart' element={<Cart />} />
 
               {/* 404 page */}
               <Route path='*' element={<PageNotFound />} />
