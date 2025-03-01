@@ -139,7 +139,6 @@ function ProductDetail() {
         try {
             const res = await axios.get(`reviews/${product.id}/`);
             setReviews(res.data);
-            console.log(res.data);
         } catch (error) {
             console.error("Error fetching reviews:", error);
         }

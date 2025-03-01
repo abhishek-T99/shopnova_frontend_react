@@ -292,47 +292,50 @@ function Products() {
 
                                                                 {/* Size */}
                                                                 {product?.size && product?.size.length > 0 && (
+
                                                                     <div className="d-flex flex-column">
-                                                                        <li className="p-1"><b>Size</b>: {selectedSize[product.id] || 'Select a size'}</li>
-                                                                        <div className="p-1 mt-0 pt-0 d-flex flex-wrap">
+                                                                        <li className="p-1">
+                                                                            <b>Size</b>: {selectedSize[product.id] || 'Select a size'}
+                                                                        </li>
+                                                                        <ul className="p-1 mt-0 pt-0 d-flex flex-wrap list-unstyled">
                                                                             {product?.size?.map((size, index) => (
-                                                                                <>
-                                                                                    <li key={index}>
-                                                                                        <button
-                                                                                            className="btn btn-secondary btn-sm me-2 mb-1"
-                                                                                            onClick={(e) => handleSizeButtonClick(e, product.id, size.name)}
-                                                                                        >
-                                                                                            {size.name}
-                                                                                        </button>
-                                                                                    </li>
-                                                                                </>
+                                                                                <li key={`${product.id}-${size.name}`}>
+                                                                                    <button
+                                                                                        className="btn btn-secondary btn-sm me-2 mb-1"
+                                                                                        onClick={(e) => handleSizeButtonClick(e, product.id, size.name)}
+                                                                                    >
+                                                                                        {size.name}
+                                                                                    </button>
+                                                                                </li>
                                                                             ))}
-                                                                        </div>
+                                                                        </ul>
                                                                     </div>
+
                                                                 )}
 
 
                                                                 {/* Color */}
                                                                 {product.color && product.color.length > 0 && (
+
                                                                     <div className="d-flex flex-column mt-3">
-                                                                        <li className="p-1 color_name_div"><b>Color</b>: {selectedColors[product.id] || 'Select a color'}</li>
+                                                                        <li className="p-1 color_name_div">
+                                                                            <b>Color</b>: {selectedColors[product.id] || 'Select a color'}
+                                                                        </li>
                                                                         <div className="p-1 mt-0 pt-0 d-flex flex-wrap">
-                                                                            {product?.color?.map((color, index) => (
-                                                                                <>
+                                                                            {product?.color?.map((color) => (
+                                                                                <li key={`${product.id}-${color.id}`}>  {/* Unique key applied to the <li> */}
                                                                                     <input type="hidden" className={`color_name${color.id}`} name="" id="" />
-                                                                                    <li key={index}>
-                                                                                        <button
-                                                                                            key={color.id}
-                                                                                            className="color-button btn p-3 me-2"
-                                                                                            style={{ backgroundColor: color.color_code }}
-                                                                                            onClick={(e) => handleColorButtonClick(e, product.id, color.name, color.image)}
-                                                                                        >
-                                                                                        </button>
-                                                                                    </li>
-                                                                                </>
+                                                                                    <button
+                                                                                        className="color-button btn p-3 me-2"
+                                                                                        style={{ backgroundColor: color.color_code }}
+                                                                                        onClick={(e) => handleColorButtonClick(e, product.id, color.name, color.image)}
+                                                                                    >
+                                                                                    </button>
+                                                                                </li>
                                                                             ))}
                                                                         </div>
                                                                     </div>
+
                                                                 )}
 
                                                                 {/* Add To Cart */}
