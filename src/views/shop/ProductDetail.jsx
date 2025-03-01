@@ -51,7 +51,7 @@ function ProductDetail() {
     let cart_id = CartID()
 
     useEffect(() => {
-        axios.get('products/' + params.slug + "/").then((res) => {
+        axios.get('products/' + params.slug + '/').then((res) => {
             setProduct(res.data);
             setProductImage(res.data.image);
             setgallery(res.data.gallery);
@@ -134,14 +134,20 @@ function ProductDetail() {
     }
 
     const fetchReviewData = async () => {
-        axios.get(`reviews/${product?.id}/`).then((res) => {
-            setReviews(res.data);
-        })
-    }
-    useEffect(() => {
+        if (!product?.id) return;  // Prevents the API call if product.id is undefined
 
-        fetchReviewData()
-    }, [loading])
+        try {
+            const res = await axios.get(`reviews/${product.id}/`);
+            setReviews(res.data);
+            console.log(res.data);
+        } catch (error) {
+            console.error("Error fetching reviews:", error);
+        }
+    };
+
+    useEffect(() => {
+        fetchReviewData();
+    }, [loading, product]); // Add 'product' to dependencies
 
     const handleReviewSubmit = (e) => {
         e.preventDefault()
