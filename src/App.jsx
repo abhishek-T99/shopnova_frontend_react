@@ -7,6 +7,7 @@ import apiInstance from './utils/axios'
 
 import Home from './views/shop/Home'
 import MainWrapper from './layouts/MainWrapper'
+import PrivateRoute from './layouts/PrivateRoute'
 import Login from './views/auth/Login'
 import Logout from './views/auth/Logout'
 import Register from './views/auth/Register'
@@ -18,6 +19,7 @@ import PageNotFound from './views/base/PageNotFound'
 import ProductDetail from './views/shop/ProductDetail'
 import { CartContext } from './views/plugin/Context'
 import Cart  from './views/shop/Cart'
+import Checkout from './views/shop/Checkout'
 
 function App() {
 
@@ -50,7 +52,8 @@ function App() {
 
               {/* Store routes */}
               <Route path='/detail/:slug' element={<ProductDetail />} />
-              <Route path='/cart' element={<Cart />} />
+              <Route path='/cart/' element={<Cart />} />
+              <Route path="/checkout/:order_oid" element={<PrivateRoute><Checkout /></PrivateRoute>} />
 
               {/* 404 page */}
               <Route path='*' element={<PageNotFound />} />

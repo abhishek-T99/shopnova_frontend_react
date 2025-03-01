@@ -119,11 +119,31 @@ function ProductDetail() {
     };
 
     const handleAddToWishlist = () => {
-        if (userData) {
-            addToWishlist(product.id, userData?.user_id)
-            setWishlistLoading(true)
+        if (!userData?.user_id) {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Login Required',
+                text: 'You must be logged in to add items to your wishlist.',
+                confirmButtonText: 'OK',
+                confirmButtonColor: '#3085d6',
+            });
+            return;
         }
-    }
+
+        try {
+            addToWishlist(product_id, userData.user_id);
+            setWishlistLoading(true);
+        } catch (error) {
+            console.log(error);
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'An error occurred while adding the item to your wishlist.',
+                confirmButtonText: 'OK',
+                confirmButtonColor: '#3085d6',
+            });
+        }
+    };
 
 
     const handleReviewChange = (event) => {

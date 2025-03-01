@@ -46,11 +46,11 @@ function Cart() {
 
     // Get Cart Totals
     const fetchCartTotal = async (cartId, userId) => {
+        console.log(cartId, userId);
         const url = userId ? `cart-detail/${cartId}/${userId}/` : `cart-detail/${cartId}/`
         axios.get(url).then((res) => {
             setCartTotal(res.data);
         });
-        // console.log(cartTotal);
     }
 
     useEffect(() => {
@@ -438,7 +438,7 @@ function Cart() {
                                                 <span>{addon.currency_sign} {cartTotal.tax?.toFixed(2)}</span>
                                             </div>
                                             <div className="d-flex justify-content-between">
-                                                <span>Servive Fee </span>
+                                                <span>Service Fee </span>
                                                 <span>{addon.currency_sign} {cartTotal.service_fee?.toFixed(2)}</span>
                                             </div>
                                             <hr className="my-4" />

@@ -10,6 +10,7 @@ import CartID from '../plugin/cartID';
 import { addToCart } from '../plugin/addToCart';
 import { addToWishlist } from '../plugin/addToWishlist';
 import { CartContext } from '../plugin/Context';
+import Swal from 'sweetalert2';
 
 function Products() {
 
@@ -192,10 +193,28 @@ function Products() {
 
 
     const handleAddToWishlist = async (product_id) => {
+        if (!userData?.user_id) {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Login Required',
+                text: 'You must be logged in to add items to your wishlist.',
+                confirmButtonText: 'OK',
+                confirmButtonColor: '#3085d6',
+            });
+            return;
+        }
+
         try {
-            await addToWishlist(product_id, userData?.user_id)
+            await addToWishlist(product_id, userData.user_id);
         } catch (error) {
             console.log(error);
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'An error occurred while adding the item to your wishlist.',
+                confirmButtonText: 'OK',
+                confirmButtonColor: '#3085d6',
+            });
         }
     };
 
