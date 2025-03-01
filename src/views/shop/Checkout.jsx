@@ -233,10 +233,17 @@ function Checkout() {
                       <span>Tax </span>
                       <span>{addon.currency_sign} {order.tax_fee}</span>
                     </div>
-                    <div className="d-flex justify-content-between">
+                    <div className="d-flex justify-content-between mb-3">
                       <span>Service Fee </span>
                       <span>{addon.currency_sign} {order.service_fee}</span>
                     </div>
+
+                    {order.saved != 0.00 &&
+                        <div className="d-flex text-danger justify-content-between">
+                            <span>Discount </span>
+                            <span>- {addon.currency_sign} {order.saved}</span>
+                        </div>
+                    }
                     <hr className="my-4" />
                     <div className="d-flex justify-content-between fw-bold mb-5">
                       <span>Total </span>
