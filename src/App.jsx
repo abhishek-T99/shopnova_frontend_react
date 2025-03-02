@@ -21,6 +21,7 @@ import { CartContext } from './views/plugin/Context'
 import Cart  from './views/shop/Cart'
 import Checkout from './views/shop/Checkout'
 import PaymentSuccess from './views/shop/PaymentSuccess'
+import Invoice from './views/shop/Invoice'
 
 function App() {
 
@@ -56,6 +57,7 @@ function App() {
               <Route path='/cart/' element={<Cart />} />
               <Route path="/checkout/:order_oid" element={<PrivateRoute><Checkout /></PrivateRoute>} />
               <Route path="/payment-success/:order_oid/" element={<PaymentSuccess />} />
+              <Route path="/invoice/:order_oid/" element={<Invoice />} />
 
               {/* 404 page */}
               <Route path='*' element={<PageNotFound />} />

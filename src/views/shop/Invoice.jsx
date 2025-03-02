@@ -18,14 +18,25 @@ function Invoice() {
         })
     }, [param])
 
+    // const handlePrint = () => {
+    //     window.print();
+    // };
+
     const handlePrint = () => {
-        window.print();
+        const printContent = document.getElementById('payment-receipt'); // Select the receipt div
+        const originalContent = document.body.innerHTML; // Store the original page content
+
+        document.body.innerHTML = printContent.innerHTML; // Replace body with receipt content
+        window.print(); // Print only the receipt
+
+        document.body.innerHTML = originalContent; // Restore original content
+        window.location.reload(); // Reload to fix any broken event listeners
     };
 
     return (
         <div>
             <>
-                <div className="row d-flex justify-content-center p-2">
+                <div className="row d-flex justify-content-center p-2" id="payment-receipt">
                     <div className="receipt-main col-xs-10 col-sm-10 col-md-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-3">
                         <div className="d-flex justify-content-between">
                             <div className="row">
@@ -43,7 +54,7 @@ function Invoice() {
                                     <div className="col-xs-12 col-sm-12 col-md-12 text-left">
                                         <div className="receipt-right">
                                             <h5 className="margin-top-10">
-                                                Desphixs<span className="text-warning">.</span>
+                                                E-Commerce Platform<span className="text-warning">.</span>
                                             </h5>
                                             <p>
                                                 <i className="fa fa-phone" /> +1 3649-6589
@@ -106,7 +117,7 @@ function Invoice() {
                                 </thead>
                                 <tbody>
                                     {orderItems.map((order, index) => (
-                                        <tr>
+                                        <tr key={order?.id || index}>
                                             <td className="col-md-5">
                                                 {order?.product?.title}
                                             </td>
@@ -114,7 +125,7 @@ function Invoice() {
                                                 ${order?.price}
                                             </td>
                                             <td className="col-md-2">
-                                                ${order?.qty}
+                                                {order?.qty}
                                             </td>
                                             <td className="col-md-2">
                                                 ${order?.sub_total}

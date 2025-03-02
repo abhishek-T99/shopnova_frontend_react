@@ -451,7 +451,7 @@ function Cart() {
                                                     onClick={createCartOrder}
                                                     className="btn btn-primary btn-rounded w-100"
                                                 >
-                                                    Got to checkout
+                                                    Checkout
                                                 </button>
                                             }
                                         </section>
