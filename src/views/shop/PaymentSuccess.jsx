@@ -132,7 +132,7 @@ function PaymentSuccess() {
                                                                                     to="/"
                                                                                     className="btn btn-success mt-3 me-2"
                                                                                 >
-                                                                                    Go Home <i className="fas fa-fa-arrow-left" />{" "}
+                                                                                    Homepage <i className="fas fa-fa-arrow-left" />{" "}
                                                                                 </Link>
                                                                             </div>
                                                                         </div>
@@ -167,12 +167,12 @@ function PaymentSuccess() {
                                                                                     Download Invoice{" "}
                                                                                     <i className="fas fa-file-invoice" />{" "}
                                                                                 </Link>
-                                                                                <a
-                                                                                    href="{% url 'dashboard:dashboard' %}"
+                                                                                <Link
+                                                                                    to="/"
                                                                                     className="btn btn-success mt-3 me-2"
                                                                                 >
-                                                                                    Go Home <i className="fas fa-fa-arrow-left" />{" "}
-                                                                                </a>
+                                                                                    Homepage <i className="fas fa-fa-arrow-left" />{" "}
+                                                                                </Link>
                                                                             </div>
                                                                         </div>
                                                                     </div>

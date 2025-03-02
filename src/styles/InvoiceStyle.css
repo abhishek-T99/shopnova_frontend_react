@@ -1,0 +1,150 @@
+body {
+    background: #ffffff;
+}
+.text-danger strong {
+    color: #18389f;
+}
+.receipt-main {
+    background: #ffffff none repeat scroll 0 0;
+    border-bottom: 12px solid #333333;
+    border-top: 12px solid #18389f;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 40px 30px !important;
+    position: relative;
+    box-shadow: 0 1px 21px #acacac;
+    color: #333333;
+    font-family: open sans;
+}
+.receipt-main p {
+    color: #333333;
+    font-family: open sans;
+    line-height: 1.42857;
+}
+.receipt-footer h1 {
+    font-size: 15px;
+    font-weight: 400 !important;
+    margin: 0 !important;
+}
+.receipt-main::after {
+    background: #414143 none repeat scroll 0 0;
+    content: "";
+    height: 5px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: -13px;
+}
+.receipt-main thead {
+    background: #414143 none repeat scroll 0 0;
+}
+.receipt-main thead th {
+    color: #fff;
+}
+.receipt-right h5 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 0 7px 0;
+}
+.receipt-right p {
+    font-size: 12px;
+    margin: 0px;
+}
+.receipt-right p i {
+    text-align: center;
+    width: 18px;
+}
+.receipt-main td {
+    padding: 9px 20px !important;
+}
+.receipt-main th {
+    padding: 13px 20px !important;
+}
+.receipt-main td {
+    font-size: 13px;
+    font-weight: initial !important;
+}
+.receipt-main td p:last-child {
+    margin: 0;
+    padding: 0;
+}
+.receipt-main td h2 {
+    font-size: 20px;
+    font-weight: 900;
+    margin: 0;
+    text-transform: uppercase;
+}
+.receipt-header-mid .receipt-left h1 {
+    font-weight: 100;
+    margin: 34px 0 0;
+    text-align: right;
+    text-transform: uppercase;
+}
+.receipt-header-mid {
+    margin: 24px 0;
+    overflow: hidden;
+}
+
+
+
+#sidebar {
+                padding-left: 0;
+            }
+
+            @media screen and (max-width: 48em) {
+                .row-offcanvas {
+                    position: relative;
+                    -webkit-transition: all 0.25s ease-out;
+                    -moz-transition: all 0.25s ease-out;
+                    transition: all 0.25s ease-out;
+                }
+                .row-offcanvas-left .sidebar-offcanvas {
+                    left: -33%;
+                }
+                .row-offcanvas-left.active {
+                    left: 33%;
+                    margin-left: -6px;
+                }
+                .sidebar-offcanvas {
+                    position: absolute;
+                    top: 0;
+                    width: 33%;
+                    height: 100%;
+                }
+            }
+
+            @media screen and (max-width: 34em) {
+                .row-offcanvas-left .sidebar-offcanvas {
+                    left: -45%;
+                }
+                .row-offcanvas-left.active {
+                    left: 45%;
+                    margin-left: -6px;
+                }
+                .sidebar-offcanvas {
+                    width: 45%;
+                }
+            }
+
+            
+
+            .card-block .rotate {
+                z-index: 8;
+                float: right;
+                height: 100%;
+            }
+
+            .card-block .rotate i {
+                color: rgba(20, 20, 20, 0.15);
+                position: absolute;
+                left: 0;
+                left: auto;
+                right: 10px;
+                bottom: 0;
+                display: block;
+                -webkit-transform: rotate(-44deg);
+                -moz-transform: rotate(-44deg);
+                -o-transform: rotate(-44deg);
+                -ms-transform: rotate(-44deg);
+                transform: rotate(-44deg);
+            }
