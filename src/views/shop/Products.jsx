@@ -529,7 +529,14 @@ function Products() {
                                                     <button type="button" className="btn btn-primary me-1 mb-1">
                                                         Add to cart
                                                     </button>
-                                                    <button type="button" className="btn btn-danger px-3 me-1 mb-1">
+                                                    {/* <button type="button" className="btn btn-danger px-3 me-1 mb-1">
+                                                        <i className="fas fa-heart" />
+                                                    </button> */}
+                                                    <button
+                                                        onClick={() => handleAddToWishlist(product.id)}
+                                                        type="button"
+                                                        className="btn btn-danger px-3 ms-2 "
+                                                    >
                                                         <i className="fas fa-heart" />
                                                     </button>
                                                 </div>
