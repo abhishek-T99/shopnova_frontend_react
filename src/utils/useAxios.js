@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { getRefreshToken, isAccessTokenExpired, setAuthUser } from './auth';
-import { API_BASE_URL } from './constants';
 import Cookies from 'js-cookie';
 
 const useAxios = () => {
@@ -8,7 +7,7 @@ const useAxios = () => {
     const refreshToken = Cookies.get('refresh_token');
 
     const axiosInstance = axios.create({
-        baseURL: API_BASE_URL,
+        baseURL: import.meta.env.API_BASE_URL,
         headers: { Authorization: `Bearer ${accessToken}` },
     });
 

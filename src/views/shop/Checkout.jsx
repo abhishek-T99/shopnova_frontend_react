@@ -2,7 +2,6 @@ import { React, useEffect, useState } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import Swal from 'sweetalert2'
-import { API_BASE_URL, PAYPAL_CLIENT_ID } from '../../utils/constants';
 
 import Addon from '../plugin/Addon';
 import apiInstance from '../../utils/axios';
@@ -267,13 +266,13 @@ function Checkout() {
                     </div>
 
                     {paymentLoading === true &&
-                      <form action={`${API_BASE_URL}stripe-checkout/${param?.order_oid}/`} method='POST'>
+                      <form action={`${import.meta.env.API_BASE_URL}stripe-checkout/${param?.order_oid}/`} method='POST'>
                         <button onClick={payWithStripe} type="submit" className="btn btn-primary btn-rounded w-100 mt-2" style={{ backgroundColor: "#635BFF" }}>Processing... <i className='fas fa-spinner fa-spin'></i> </button>
                       </form>
                     }
 
                     {paymentLoading === false &&
-                      <form action={`${API_BASE_URL}stripe-checkout/${param?.order_oid}/`} method='POST'>
+                      <form action={`${import.meta.env.API_BASE_URL}stripe-checkout/${param?.order_oid}/`} method='POST'>
                         <button onClick={payWithStripe} type="submit" className="btn btn-primary btn-rounded w-100 mt-2" style={{ backgroundColor: "#635BFF" }}>Pay Now (Stripe)</button>
                       </form>
                     }
