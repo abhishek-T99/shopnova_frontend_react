@@ -64,7 +64,7 @@ function App() {
               <Route path='/cart/' element={<Cart />} />
               <Route path="/checkout/:order_oid" element={<PrivateRoute><Checkout /></PrivateRoute>} />
               <Route path="/payment-success/:order_oid/" element={<PaymentSuccess />} />
-              <Route path="/invoice/:order_oid/" element={<Invoice />} />
+              <Route path="/invoice/:order_oid/" element={<PrivateRoute><Invoice /></PrivateRoute>} />
               <Route path="/search" element={<Search />} />
 
               {/* Customer Routes */}
