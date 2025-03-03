@@ -266,13 +266,13 @@ function Checkout() {
                     </div>
 
                     {paymentLoading === true &&
-                      <form action={`${import.meta.env.API_BASE_URL}stripe-checkout/${param?.order_oid}/`} method='POST'>
+                      <form action={`${import.meta.env.VITE_API_BASE_URL}stripe-checkout/${param?.order_oid}/`} method='POST'>
                         <button onClick={payWithStripe} type="submit" className="btn btn-primary btn-rounded w-100 mt-2" style={{ backgroundColor: "#635BFF" }}>Processing... <i className='fas fa-spinner fa-spin'></i> </button>
                       </form>
                     }
 
                     {paymentLoading === false &&
-                      <form action={`${import.meta.env.API_BASE_URL}stripe-checkout/${param?.order_oid}/`} method='POST'>
+                      <form action={`${import.meta.env.VITE_API_BASE_URL}stripe-checkout/${param?.order_oid}/`} method='POST'>
                         <button onClick={payWithStripe} type="submit" className="btn btn-primary btn-rounded w-100 mt-2" style={{ backgroundColor: "#635BFF" }}>Pay Now (Stripe)</button>
                       </form>
                     }
