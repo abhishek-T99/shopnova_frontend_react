@@ -26,6 +26,7 @@ import Search from './views/shop/Search'
 import Account from './views/customer/Accounts'
 import Orders from './views/customer/Order'
 import OrderDetail from './views/customer/OrderDetail'
+import Wishlist from './views/customer/Wishlist'
 
 function App() {
 
@@ -68,7 +69,7 @@ function App() {
               <Route path="/customer/account/" element={<PrivateRoute><Account /></PrivateRoute>} />
               <Route path="/customer/orders/" element={<PrivateRoute><Orders /></PrivateRoute>} />
               <Route path="/customer/order/detail/:order_oid/" element={<PrivateRoute><OrderDetail /></PrivateRoute>} />
-              {/* <Route path="/customer/wishlist/" element={<PrivateRoute><Wishlist /></PrivateRoute>} /> */}
+              <Route path="/customer/wishlist/" element={<PrivateRoute><Wishlist /></PrivateRoute>} />
               {/* <Route path="/customer/notifications/" element={<PrivateRoute><Notifications /></PrivateRoute>} /> */}
               {/* <Route path="/customer/settings/" element={<PrivateRoute><Settings /></PrivateRoute>} /> */}
 
