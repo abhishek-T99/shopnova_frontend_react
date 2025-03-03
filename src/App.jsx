@@ -22,6 +22,7 @@ import Cart  from './views/shop/Cart'
 import Checkout from './views/shop/Checkout'
 import PaymentSuccess from './views/shop/PaymentSuccess'
 import Invoice from './views/shop/Invoice'
+import Search from './views/shop/Search'
 
 function App() {
 
@@ -58,6 +59,7 @@ function App() {
               <Route path="/checkout/:order_oid" element={<PrivateRoute><Checkout /></PrivateRoute>} />
               <Route path="/payment-success/:order_oid/" element={<PaymentSuccess />} />
               <Route path="/invoice/:order_oid/" element={<Invoice />} />
+              <Route path="/search" element={<Search />} />
 
               {/* 404 page */}
               <Route path='*' element={<PageNotFound />} />
