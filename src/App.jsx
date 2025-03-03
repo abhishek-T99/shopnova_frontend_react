@@ -24,6 +24,7 @@ import PaymentSuccess from './views/shop/PaymentSuccess'
 import Invoice from './views/shop/Invoice'
 import Search from './views/shop/Search'
 import Account from './views/customer/Accounts'
+import Orders from './views/customer/Order'
 
 function App() {
 
@@ -64,11 +65,11 @@ function App() {
 
               {/* Customer Routes */}
               <Route path="/customer/account/" element={<PrivateRoute><Account /></PrivateRoute>} />
-              {/* <Route path="/customer/orders/" element={<PrivateRoute><Orders /></PrivateRoute>} />
-              <Route path="/customer/order/detail/:order_oid/" element={<PrivateRoute><OrderDetail /></PrivateRoute>} />
-              <Route path="/customer/wishlist/" element={<PrivateRoute><Wishlist /></PrivateRoute>} />
-              <Route path="/customer/notifications/" element={<PrivateRoute><Notifications /></PrivateRoute>} />
-              <Route path="/customer/settings/" element={<PrivateRoute><Settings /></PrivateRoute>} /> */}
+              <Route path="/customer/orders/" element={<PrivateRoute><Orders /></PrivateRoute>} />
+              {/* <Route path="/customer/order/detail/:order_oid/" element={<PrivateRoute><OrderDetail /></PrivateRoute>} /> */}
+              {/* <Route path="/customer/wishlist/" element={<PrivateRoute><Wishlist /></PrivateRoute>} /> */}
+              {/* <Route path="/customer/notifications/" element={<PrivateRoute><Notifications /></PrivateRoute>} /> */}
+              {/* <Route path="/customer/settings/" element={<PrivateRoute><Settings /></PrivateRoute>} /> */}
 
               {/* 404 page */}
               <Route path='*' element={<PageNotFound />} />
