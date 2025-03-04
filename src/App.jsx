@@ -43,6 +43,7 @@ import VendorNotification from './views/vendor/Notification'
 import VendorSettings from './views/vendor/Settings'
 import Shop from './views/vendor/Shop'
 import AddProduct from './views/vendor/AddProduct'
+import UpdateProduct from './views/vendor/UpdateProduct'
 
 function App() {
 
@@ -93,7 +94,7 @@ function App() {
               <Route path="/vendor/dashboard/" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
               <Route path="/vendor/products/" element={<PrivateRoute> <Products /></PrivateRoute>} />
               <Route path="/vendor/product/new/" element={<PrivateRoute> <AddProduct /></PrivateRoute>} />
-              {/* <Route path="/vendor/product/update/:pid/" element={<PrivateRoute> <UpdateProduct /></PrivateRoute>} /> */}
+              <Route path="/vendor/product/update/:pid/" element={<PrivateRoute> <UpdateProduct /></PrivateRoute>} />
               <Route path="/vendor/orders/" element={<PrivateRoute> <VendorOrders /></PrivateRoute>} />
               <Route path="/vendor/orders/:oid/" element={<PrivateRoute> <VendorOrderDetail /></PrivateRoute>} />
               <Route path="/vendor/earning/" element={<PrivateRoute> <Earning /></PrivateRoute>} />
