@@ -31,6 +31,7 @@ import Notifications from './views/customer/Notification'
 import Settings from './views/customer/Settings'
 import Dashboard from './views/vendor/Dashboard'
 import VendorRegister from './views/vendor/VendorRegister'
+import Products from './views/vendor/Product'
 
 function App() {
 
