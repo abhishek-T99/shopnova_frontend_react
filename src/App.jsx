@@ -41,6 +41,7 @@ import Coupon from './views/vendor/Coupon'
 import CouponEdit from './views/vendor/CouponEdit'
 import VendorNotification from './views/vendor/Notification'
 import VendorSettings from './views/vendor/Settings'
+import Shop from './views/vendor/Shop'
 
 function App() {
 
@@ -101,7 +102,7 @@ function App() {
               <Route path="/vendor/coupon/:id/" element={<PrivateRoute> <CouponEdit /></PrivateRoute>} />
               <Route path="/vendor/notifications/" element={<PrivateRoute> <VendorNotification /></PrivateRoute>} />
               <Route path="/vendor/settings/" element={<PrivateRoute> <VendorSettings /></PrivateRoute>} />
-              {/* <Route path="/vendor/:slug/" element={<Shop />} /> */}
+              <Route path="/vendor/:slug/" element={<Shop />} />
               <Route path="/vendor/register/" element={<VendorRegister />} />
               {/* <Route path="/vendor/orders/:oid/:id/" element={<OrderItemDetail />} /> */}
 
