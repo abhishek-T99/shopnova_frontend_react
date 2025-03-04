@@ -30,6 +30,7 @@ import Wishlist from './views/customer/Wishlist'
 import Notifications from './views/customer/Notification'
 import Settings from './views/customer/Settings'
 import Dashboard from './views/vendor/Dashboard'
+import VendorRegister from './views/vendor/VendorRegister'
 
 function App() {
 
@@ -91,7 +92,7 @@ function App() {
               {/* <Route path="/vendor/notifications/" element={<PrivateRoute> <VendorNotifications /></PrivateRoute>} /> */}
               {/* <Route path="/vendor/settings/" element={<PrivateRoute> <VendorSettings /></PrivateRoute>} /> */}
               {/* <Route path="/vendor/:slug/" element={<Shop />} /> */}
-              {/* <Route path="/vendor/register/" element={<VendorRegister />} /> */}
+              <Route path="/vendor/register/" element={<VendorRegister />} />
               {/* <Route path="/vendor/orders/:oid/:id/" element={<OrderItemDetail />} /> */}
 
               {/* 404 page */}
