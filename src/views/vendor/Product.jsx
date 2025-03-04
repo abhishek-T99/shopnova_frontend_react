@@ -141,7 +141,12 @@ function Products() {
                                 ))}
 
                                 {products?.length < 1 &&
-                                    <h4 className='p-3 mt-4'>No Products Yet</h4>
+                                    // <h4 className='p-3 mt-4'>No Products Yet</h4>
+                                    <tr>
+                                        <td colSpan="7" className="text-center">
+                                            <h4 className="p-3 mt-4">No Products Yet</h4>
+                                        </td>
+                                    </tr>
                                 }
 
                             </tbody>
