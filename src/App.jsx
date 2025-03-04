@@ -39,6 +39,7 @@ import Reviews from './views/vendor/Reviews'
 import ReviewDetail from './views/vendor/ReviewDetail'
 import Coupon from './views/vendor/Coupon'
 import CouponEdit from './views/vendor/CouponEdit'
+import VendorNotification from './views/vendor/Notification'
 
 function App() {
 
@@ -97,7 +98,7 @@ function App() {
               <Route path="/vendor/reviews/:id/" element={<PrivateRoute> <ReviewDetail /></PrivateRoute>} />
               <Route path="/vendor/coupon/" element={<PrivateRoute> <Coupon /></PrivateRoute>} />
               <Route path="/vendor/coupon/:id/" element={<PrivateRoute> <CouponEdit /></PrivateRoute>} />
-              {/* <Route path="/vendor/notifications/" element={<PrivateRoute> <VendorNotifications /></PrivateRoute>} /> */}
+              <Route path="/vendor/notifications/" element={<PrivateRoute> <VendorNotification /></PrivateRoute>} />
               {/* <Route path="/vendor/settings/" element={<PrivateRoute> <VendorSettings /></PrivateRoute>} /> */}
               {/* <Route path="/vendor/:slug/" element={<Shop />} /> */}
               <Route path="/vendor/register/" element={<VendorRegister />} />
