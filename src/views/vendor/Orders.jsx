@@ -35,7 +35,7 @@ function Orders() {
                 <div className="col-md-9 col-lg-10 main">
                     <div className="mb-3 mt-3" style={{ marginBottom: 300 }}>
                         <div>
-                            <h4><i class="bi bi-cart-check-fill"></i> All Orders  </h4>
+                            <h4><i className="bi bi-cart-check-fill"></i> All Orders  </h4>
 
                             <table className="table">
                                 <thead className="table-dark">
@@ -63,7 +63,11 @@ function Orders() {
                                     ))}
 
                                     {orders < 1 &&
-                                        <h5 className='mt-4 p-3'>No orders yet</h5>
+                                        <tr>
+                                            <td>
+                                                <h5 className='mt-4 p-3'>No orders yet</h5>
+                                            </td>
+                                        </tr>
                                     }
                                 </tbody>
                             </table>

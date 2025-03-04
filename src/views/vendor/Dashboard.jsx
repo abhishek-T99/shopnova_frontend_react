@@ -234,7 +234,11 @@ function Dashboard() {
                     ))}
 
                     {products < 1 &&
-                      <h5 className='mt-4 p-3'>No products yet</h5>
+                      <tr>
+                        <td colSpan="7" className="text-center">
+                        <h5 className='mt-4 p-3'>No products yet</h5>
+                        </td>
+                      </tr>
                     }
 
 
@@ -270,7 +274,11 @@ function Dashboard() {
                     ))}
 
                     {orders < 1 &&
-                      <h5 className='mt-4 p-3'>No orders yet</h5>
+                      <tr>
+                        <td colSpan="7" className="text-center">
+                          <h5 className='mt-4 p-3'>No orders yet</h5>
+                        </td>
+                      </tr>
                     }
 
                   </tbody>
