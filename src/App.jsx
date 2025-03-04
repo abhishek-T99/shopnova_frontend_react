@@ -29,6 +29,11 @@ import OrderDetail from './views/customer/OrderDetail'
 import Wishlist from './views/customer/Wishlist'
 import Notifications from './views/customer/Notification'
 import Settings from './views/customer/Settings'
+import Dashboard from './views/vendor/Dashboard'
+import VendorRegister from './views/vendor/VendorRegister'
+import Products from './views/vendor/Product'
+import VendorOrders from './views/vendor/Orders'
+import VendorOrderDetail from './views/vendor/OrderDetail'
 
 function App() {
 
@@ -74,6 +79,24 @@ function App() {
               <Route path="/customer/wishlist/" element={<PrivateRoute><Wishlist /></PrivateRoute>} />
               <Route path="/customer/notifications/" element={<PrivateRoute><Notifications /></PrivateRoute>} />
               <Route path="/customer/settings/" element={<PrivateRoute><Settings /></PrivateRoute>} />
+
+              {/* Vendor Routes */}
+              <Route path="/vendor/dashboard/" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
+              <Route path="/vendor/products/" element={<PrivateRoute> <Products /></PrivateRoute>} />
+              {/* <Route path="/vendor/product/new/" element={<PrivateRoute> <AddProduct /></PrivateRoute>} /> */}
+              {/* <Route path="/vendor/product/update/:pid/" element={<PrivateRoute> <UpdateProduct /></PrivateRoute>} /> */}
+              <Route path="/vendor/orders/" element={<PrivateRoute> <VendorOrders /></PrivateRoute>} />
+              <Route path="/vendor/orders/:oid/" element={<PrivateRoute> <VendorOrderDetail /></PrivateRoute>} />
+              {/* <Route path="/vendor/earning/" element={<PrivateRoute> <Earning /></PrivateRoute>} /> */}
+              {/* <Route path="/vendor/reviews/" element={<PrivateRoute> <Reviews /></PrivateRoute>} /> */}
+              {/* <Route path="/vendor/reviews/:id/" element={<PrivateRoute> <ReviewDetail /></PrivateRoute>} /> */}
+              {/* <Route path="/vendor/coupon/" element={<PrivateRoute> <Coupon /></PrivateRoute>} /> */}
+              {/* <Route path="/vendor/coupon/:id/" element={<PrivateRoute> <EditCoupon /></PrivateRoute>} /> */}
+              {/* <Route path="/vendor/notifications/" element={<PrivateRoute> <VendorNotifications /></PrivateRoute>} /> */}
+              {/* <Route path="/vendor/settings/" element={<PrivateRoute> <VendorSettings /></PrivateRoute>} /> */}
+              {/* <Route path="/vendor/:slug/" element={<Shop />} /> */}
+              <Route path="/vendor/register/" element={<VendorRegister />} />
+              {/* <Route path="/vendor/orders/:oid/:id/" element={<OrderItemDetail />} /> */}
 
               {/* 404 page */}
               <Route path='*' element={<PageNotFound />} />
