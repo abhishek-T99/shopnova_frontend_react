@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import moment from 'moment';
-import { Line } from "react-chartjs-2";
+import Chart from "chart.js/auto";
+import { Pie, Line } from "react-chartjs-2";
 
 import apiInstance from '../../utils/axios';
 import UserData from '../plugin/UserData';
 import Sidebar from './Sidebar';
+import Swal from 'sweetalert2';
 
 
 function Dashboard() {

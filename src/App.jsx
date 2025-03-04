@@ -79,7 +79,7 @@ function App() {
 
               {/* Vendor Routes */}
               <Route path="/vendor/dashboard/" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
-              {/* <Route path="/vendor/products/" element={<PrivateRoute> <Products /></PrivateRoute>} /> */}
+              <Route path="/vendor/products/" element={<PrivateRoute> <Products /></PrivateRoute>} />
               {/* <Route path="/vendor/product/new/" element={<PrivateRoute> <AddProduct /></PrivateRoute>} /> */}
               {/* <Route path="/vendor/product/update/:pid/" element={<PrivateRoute> <UpdateProduct /></PrivateRoute>} /> */}
               {/* <Route path="/vendor/orders/" element={<PrivateRoute> <VendorOrders /></PrivateRoute>} /> */}
