@@ -29,6 +29,7 @@ import OrderDetail from './views/customer/OrderDetail'
 import Wishlist from './views/customer/Wishlist'
 import Notifications from './views/customer/Notification'
 import Settings from './views/customer/Settings'
+import Dashboard from './views/vendor/Dashboard'
 
 function App() {
 
@@ -76,7 +77,7 @@ function App() {
               <Route path="/customer/settings/" element={<PrivateRoute><Settings /></PrivateRoute>} />
 
               {/* Vendor Routes */}
-              {/* <Route path="/vendor/dashboard/" element={<PrivateRoute><Dashboard /></PrivateRoute>} /> */}
+              <Route path="/vendor/dashboard/" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
               {/* <Route path="/vendor/products/" element={<PrivateRoute> <Products /></PrivateRoute>} /> */}
               {/* <Route path="/vendor/product/new/" element={<PrivateRoute> <AddProduct /></PrivateRoute>} /> */}
               {/* <Route path="/vendor/product/update/:pid/" element={<PrivateRoute> <UpdateProduct /></PrivateRoute>} /> */}
