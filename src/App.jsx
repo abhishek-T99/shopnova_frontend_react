@@ -33,6 +33,7 @@ import Dashboard from './views/vendor/Dashboard'
 import VendorRegister from './views/vendor/VendorRegister'
 import Products from './views/vendor/Product'
 import VendorOrders from './views/vendor/Orders'
+import VendorOrderDetail from './views/vendor/OrderDetail'
 
 function App() {
 
@@ -85,7 +86,7 @@ function App() {
               {/* <Route path="/vendor/product/new/" element={<PrivateRoute> <AddProduct /></PrivateRoute>} /> */}
               {/* <Route path="/vendor/product/update/:pid/" element={<PrivateRoute> <UpdateProduct /></PrivateRoute>} /> */}
               <Route path="/vendor/orders/" element={<PrivateRoute> <VendorOrders /></PrivateRoute>} />
-              {/* <Route path="/vendor/orders/:oid/" element={<PrivateRoute> <VendorOrderDetail /></PrivateRoute>} /> */}
+              <Route path="/vendor/orders/:oid/" element={<PrivateRoute> <VendorOrderDetail /></PrivateRoute>} />
               {/* <Route path="/vendor/earning/" element={<PrivateRoute> <Earning /></PrivateRoute>} /> */}
               {/* <Route path="/vendor/reviews/" element={<PrivateRoute> <Reviews /></PrivateRoute>} /> */}
               {/* <Route path="/vendor/reviews/:id/" element={<PrivateRoute> <ReviewDetail /></PrivateRoute>} /> */}
