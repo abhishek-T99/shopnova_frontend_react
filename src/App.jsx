@@ -44,6 +44,7 @@ import VendorSettings from './views/vendor/Settings'
 import Shop from './views/vendor/Shop'
 import AddProduct from './views/vendor/AddProduct'
 import UpdateProduct from './views/vendor/UpdateProduct'
+import OrderItemDetail from './views/vendor/OrderItemDetail'
 
 function App() {
 
@@ -106,7 +107,7 @@ function App() {
               <Route path="/vendor/settings/" element={<PrivateRoute> <VendorSettings /></PrivateRoute>} />
               <Route path="/vendor/:slug/" element={<Shop />} />
               <Route path="/vendor/register/" element={<VendorRegister />} />
-              {/* <Route path="/vendor/orders/:oid/:id/" element={<OrderItemDetail />} /> */}
+              <Route path="/vendor/orders/:oid/:id/" element={<OrderItemDetail />} />
 
               {/* 404 page */}
               <Route path='*' element={<PageNotFound />} />

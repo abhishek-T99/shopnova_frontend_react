@@ -177,7 +177,11 @@ function Coupon() {
                                     ))}
 
                                     {coupons < 1 &&
-                                        <h5 className='mt-4 p-3'>No coupons yet</h5>
+                                        <tr>
+                                            <td>
+                                                <h5 className='mt-4 p-3'>No coupons yet</h5>
+                                            </td>
+                                        </tr>
                                     }
 
                                 </tbody>

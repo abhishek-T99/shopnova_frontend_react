@@ -21,7 +21,7 @@ function ReviewDetail() {
 
     const fetchData = async () => {
         try {
-            const response = await axios.get(`vendor-reviews/${userData?.vendor_id}/${params.id}`)
+            const response = await axios.get(`vendor-reviews/${userData?.vendor_id}/${params.id}/`)
             setReview(response.data);
         } catch (error) {
             console.error('Error fetching data:', error);

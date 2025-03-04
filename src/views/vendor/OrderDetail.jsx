@@ -22,7 +22,7 @@ function OrderDetail() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`vendor/orders/${userData?.vendor_id}/${param.oid}`)
+        const response = await axios.get(`vendor/orders/${userData?.vendor_id}/${param.oid}/`)
         setOrder(response.data);
         setOrderItems(response.data.orderitem);
 
@@ -253,15 +253,19 @@ function OrderDetail() {
                                 </td>
                                 <td>
                                   {order.tracking_id == null || order.tracking_id == 'undefined'
-                                    ? <Link class="btn btn-primary" to={`/vendor/orders/${param.oid}/${order.id}/`}> Add Tracking <i className='fas fa-plus'></i></Link>
-                                    : <Link class="btn btn-secondary" to={`/vendor/orders/${param.oid}/${order.id}/`}> Edit Tracking <i className='fas fa-edit'></i></Link>
+                                    ? <Link className="btn btn-primary" to={`/vendor/orders/${param.oid}/${order.id}/`}> Add Tracking <i className='fas fa-plus'></i></Link>
+                                    : <Link className="btn btn-secondary" to={`/vendor/orders/${param.oid}/${order.id}/`}> Edit Tracking <i className='fas fa-edit'></i></Link>
                                   }
                                 </td>
                               </tr>
                             ))}
 
                             {orderItems.length < 1 &&
-                              <h5 className='mt-4'>No Order Item</h5>
+                              <tr>
+                                <td>
+                                  <h5 className='mt-4'>No Order Item</h5>
+                                </td>
+                              </tr>
                             }
 
                           </tbody>

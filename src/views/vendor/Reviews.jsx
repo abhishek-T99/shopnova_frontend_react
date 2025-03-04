@@ -70,7 +70,7 @@ function Reviews() {
             <div className="row d-flex justify-content-center align-items-center">
               <div className="col-md-10">
                 {reviews.map((review, index) => (
-                  <div className="card mt-3 mb-3">
+                  <div key={index} className="card mt-3 mb-3">
                     <div className="card-body m-3">
                       <div className="row">
                         <div className="col-lg-4 d-flex justify-content-center align-items-center mb-4 mb-lg-0">
@@ -147,8 +147,8 @@ function Reviews() {
                             }
                           </p>
                           <div className="d-flex mt-3">
-                            <div class="btn-group">
-                              <Link to={`/vendor/reviews/${review.id}/`} class="btn btn-primary " >
+                            <div className="btn-group">
+                              <Link to={`/vendor/reviews/${review.id}/`} className="btn btn-primary " >
                                 <i className='fas fa-eye'></i> View Review
                               </Link>
                             </div>

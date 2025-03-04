@@ -56,7 +56,7 @@ function Earning() {
         <Sidebar />
         <div className="col-md-9 col-lg-10 main">
           <div className="mb-3 mt-3" style={{ marginBottom: 300 }}>
-            <h4><i class="fas fa-dollar-sign"></i> Earning and Revenue  </h4>
+            <h4><i className="fas fa-dollar-sign"></i> Earning and Revenue  </h4>
 
             <div className="col-xl-12 col-lg-12  mt-4">
               <div className="row mb-3 text-white">
@@ -98,7 +98,7 @@ function Earning() {
                     </thead>
                     <tbody>
                       {earningStatsTracker?.map((earning, index) => (
-                        <tr>
+                        <tr key={index}>
                           {earning.month == 1 && <th scope="row">January </th>}
                           {earning.month == 2 && <th scope="row">February </th>}
                           {earning.month == 3 && <th scope="row">March </th>}
