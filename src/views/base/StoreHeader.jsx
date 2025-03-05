@@ -4,11 +4,15 @@ import { Link } from 'react-router-dom';
 import { CartContext } from '../plugin/Context';
 import apiInstance from '../../utils/axios';
 import { useNavigate } from 'react-router-dom';
+import UseProfileData from '../plugin/UseProfileData';
+import UserData from '../plugin/UserData';
 
 
 function StoreHeader() {
     const cartCount = useContext(CartContext)
     const [search, setSearch] = useState("")
+
+    const userProfile = UseProfileData()
 
     const [isLoggedIn, user] = useAuthStore((state) => [
         state.isLoggedIn,
@@ -30,12 +34,13 @@ function StoreHeader() {
         <div>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div className="container">
-                    <Link className="navbar-brand me-4" to="/">ShopNova</Link>
+                    <Link className="navbar-brand me-4 flex align-items-center" to="/">
+                        <img src="/logo.png" alt="ShopNova" className="img-fluid" style={{ height: "40px", width: "auto" }} />
+                    </Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon" />
                     </button>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
-
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
@@ -72,19 +77,30 @@ function StoreHeader() {
                             <input onChange={handleSearchChange} name='search' className="form-control me-2" type="text" placeholder="Search" aria-label="Search" />
                             <button onClick={handleSearchSubmit} className="btn btn-outline-success me-2" type="submit">Search</button>
                         </div>
-                        {isLoggedIn()
-                            ?
-                            <>
-                                <Link className="btn btn-primary me-2" to={'/customer/account/'}>Account</Link>
-                                <Link className="btn btn-primary me-2" to="/logout">Logout</Link>
-                            </>
-                            :
-                            <>
-                                <Link className="btn btn-primary me-2" to="/login">Login</Link>
-                                <Link className="btn btn-primary me-2" to="/register">Register</Link>
 
-                            </>
-                        }
+                        {isLoggedIn() ? (
+                                <>
+                                    {userProfile?.image ? (
+                                        <Link className="me-2" to={'/customer/account/'}>
+                                            <img 
+                                                src={userProfile.image}
+                                                style={{ width: 40, height: 40, borderRadius: "50%", objectFit: "cover" }}
+                                            />
+                                        </Link>
+                                    ) : (
+                                        <Link className="btn btn-primary me-2" to={'/customer/account/'}>Account</Link>
+                                    )}
+                                    
+                                    <Link className="btn btn-primary me-2" to="/logout">Logout</Link>
+                                </>
+                            ) : 
+                            (
+                                <>
+                                    <Link className="btn btn-primary me-2" to="/login">Login</Link>
+                                    <Link className="btn btn-primary me-2" to="/register">Register</Link>
+                                </>
+                            )}
+
                         <Link className="btn btn-danger" to="/cart/"><i className='fas fa-shopping-cart'></i> <span id='cart-total-items'>{cartCount || 0}</span></Link>
 
                     </div>
