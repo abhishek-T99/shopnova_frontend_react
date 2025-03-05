@@ -9,6 +9,7 @@ import { addToCart } from '../plugin/addToCart';
 import apiInstance from '../../utils/axios';
 import GetCurrentAddress from '../plugin/UserCountry';
 import UserData from '../plugin/UserData';
+import UseProfileData from '../plugin/UseProfileData';
 import CartID from '../plugin/cartID';
 import { CartContext } from '../plugin/Context';
 
@@ -31,6 +32,8 @@ function Cart() {
 
     const axios = apiInstance
     const userData = UserData()
+    const userProfileData = UseProfileData()
+
     let cart_id = CartID()
     const currentAddress = GetCurrentAddress()
     let navigate = useNavigate();
@@ -52,6 +55,32 @@ function Cart() {
             setCartTotal(res.data);
         });
     }
+
+    useEffect(() => {
+        if (userData) {
+            setFullName(userProfileData.full_name || "");
+            setEmail(userData.email || "");
+            setAddress(userProfileData.address || "");
+            setCity(userProfileData.city || "");
+            setState(userProfileData.state || "");
+            setCountry(userProfileData.country || "");
+        }
+    }, [userData]);
+
+    useEffect(() => {
+            // Fetch existing profile data
+            const fetchProfileData = async () => {
+                try {
+                    axios.get(`user/profile/${userData?.user_id}/`).then((res) => {
+                        setMobile(res.data?.user.phone)
+                    })
+                } catch (error) {
+                    console.error('Error fetching profile data: ', error);
+                }
+            };
+
+            fetchProfileData();
+        }, []);
 
     useEffect(() => {
         console.log(cartTotal);
