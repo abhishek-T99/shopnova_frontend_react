@@ -1,8 +1,8 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/6155925a-f436-467d-9a15-690719ae1f0c/deploy-status)](https://app.netlify.com/sites/ecommerce-app-react99/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/6155925a-f436-467d-9a15-690719ae1f0c/deploy-status)](https://app.netlify.com/sites/shopnova/deploys)
 
-# E-Commerce Application
+# ShopnNova
 
-This is the E-Commerce Application, built with **React (Vite)** and fully integrated with the Django API.  
+This is an E-Commerce Application, built with **React (Vite)** and fully integrated with the Django API.  
 It provides a seamless shopping experience for **customers** and an interactive **dashboard** for vendors.
 
 ---
@@ -77,7 +77,7 @@ To run this project, you need to set up the following environment variables. Cre
 
 ## Setup Guide
 
-Follow these steps to set up and run the **E-Commerce Application** locally.
+Follow these steps to set up and run **ShopNova** locally.
 
 ## Step 1: Clone the Repository
 
@@ -104,7 +104,7 @@ yarn install
 yarn dev
 ```
 
-## Step 5: Access E-Commerce Application website
+## Step 5: Access ShopNova website
 
 ```bash
 http://localhost:5000

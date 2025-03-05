@@ -67,7 +67,7 @@ function StoreFooter() {
                 <strong>About us</strong>
               </p>
               <p>
-              Welcome to E-Commerce Store, your go-to destination for high-quality products 
+              Welcome to ShopNova, your go-to destination for high-quality products 
               at unbeatable prices! We are passionate about bringing you the best shopping experience, 
               combining convenience, affordability, and top-notch customer service. Whether you're 
               looking for the latest trends, everyday essentials, or exclusive deals, we have something 

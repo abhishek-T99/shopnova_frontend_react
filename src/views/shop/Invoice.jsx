@@ -54,16 +54,16 @@ function Invoice() {
                                     <div className="col-xs-12 col-sm-12 col-md-12 text-left">
                                         <div className="receipt-right">
                                             <h5 className="margin-top-10">
-                                                E-Commerce Platform<span className="text-warning">.</span>
+                                                ShopNova<span className="text-warning">.</span>
                                             </h5>
                                             <p>
-                                                <i className="fa fa-phone" /> +1 3649-6589
+                                                <i className="fa fa-phone" /> +977 9840196929
                                             </p>
                                             <p>
-                                                <i className="fa fa-envelope" /> company@gmail.com
+                                                <i className="fa fa-envelope" /> timilsina.abhishek55@gmail.com
                                             </p>
                                             <p>
-                                                <i className="fa fa-location-arrow" /> 123 Main Street
+                                                <i className="fa fa-location-arrow" /> Kathmandu, Nepal
                                             </p>
                                         </div>
                                     </div>
