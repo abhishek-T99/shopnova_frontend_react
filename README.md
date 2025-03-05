@@ -13,6 +13,8 @@ It provides a seamless shopping experience for **customers** and an interactive 
 https://shopnova.netlify.app/
 ```
 
+---
+
 ## Features
 
 ### Authentication
