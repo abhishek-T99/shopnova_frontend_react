@@ -22,8 +22,6 @@ function Notifications() {
         })
     }, [])
 
-    console.log(notifications);
-
     return (
         <div>
             <main className="mt-5" style={{ marginBottom: 200 }}>

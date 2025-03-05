@@ -265,10 +265,9 @@ function Dashboard() {
                         <td>{moment(o.date).format("MM/DD/YYYY")}</td>
                         <td>{o.order_status}</td>
                         <td>
-                          <a href="" className="btn btn-primary mb-1">
+                          <Link to={`/vendor/orders/${o.oid}/`} className="btn btn-primary mb-1">
                             <i className="fas fa-eye" />
-                          </a>
-
+                          </Link>
                         </td>
                       </tr>
                     ))}

@@ -10,6 +10,7 @@ import { addToCart } from '../plugin/addToCart';
 import CartID from '../plugin/cartID';
 import GetCurrentAddress from '../plugin/UserCountry';
 import UserData from '../plugin/UserData';
+import Addon from '../plugin/Addon';
 
 function Shop() {
     const [products, setProduct] = useState([])
@@ -30,6 +31,7 @@ function Shop() {
     const currentAddress = GetCurrentAddress()
     const userData = UserData()
     let cart_id = CartID()
+    const addon = Addon()
     const param = useParams()
     
     if (UserData()?.vendor_id === 0) {
@@ -159,7 +161,7 @@ function Shop() {
                     <h4 className="mb-4">{products?.length} Product(s) </h4>
                     <div className="row">
                         {products.map((product, index) => (
-                            <div className="col-lg-4 col-md-12 mb-4" key={index.id}>
+                            <div className="col-lg-4 col-md-12 mb-4" key={index}>
                                 <div className="card">
                                     <div
                                         className="bg-image hover-zoom ripple"
