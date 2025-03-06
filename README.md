@@ -1,5 +1,7 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/73c0dd2b-f697-4672-b809-731db4287ffe/deploy-status)](https://app.netlify.com/sites/shopnova/deploys)
 
+![Project Screenshot](assets/your-screenshot.gif)
+
 # ShopNova
 
 This is an E-Commerce Application, built with **React (Vite)** and fully integrated with the Django API.  
