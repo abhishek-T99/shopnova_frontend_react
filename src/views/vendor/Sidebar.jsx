@@ -74,24 +74,12 @@ function Sidebar() {
                         <i className="bi bi-plus-circle" /> Add Product{" "}
                     </Link>
                 </li>
-                {/* <li className="mb-3">
-                    <a href="faqs.html" className={isActiveLink(location.pathname, '/vendor/faqs/') ? "nav-link text-white active" : "nav-link text-white"}>
-                        {" "}
-                        <i className="bi bi-patch-question" /> FAQs{" "}
-                    </a>
-                </li> */}
                 <li className="mb-3">
                     <Link to={`/vendor/coupon/`} className={isActiveLink(location.pathname, '/vendor/coupon/') ? "nav-link text-white active" : "nav-link text-white"}>
                         {" "}
                         <i className="bi bi-tag" /> Coupon &amp; Discount{" "}
                     </Link>
                 </li>
-                {/* <li className="mb-3">
-                    <a href="customers.html" className={isActiveLink(location.pathname, '/vendor/customers/') ? "nav-link text-white active" : "nav-link text-white"}>
-                        {" "}
-                        <i className="bi bi-people" /> Customers{" "}
-                    </a>
-                </li> */}
                 <li className="mb-3">
                     <Link to={`/vendor/notifications/`} className={isActiveLink(location.pathname, '/vendor/notifications/') ? "nav-link text-white active" : "nav-link text-white"}>
                         {" "}
@@ -104,12 +92,6 @@ function Sidebar() {
                         <i className="fas fa-shop" /> View Shop{" "}
                     </Link>
                 </li>
-                {/* <li className="mb-3">
-                    <a href="message.html" className={isActiveLink(location.pathname, '/vendor/message/') ? "nav-link text-white active" : "nav-link text-white"}>
-                        {" "}
-                        <i className="bi bi-envelope" /> Message{" "}
-                    </a>
-                </li> */}
                 <li className="mb-3">
                     <Link to="/vendor/settings/" className={isActiveLink(location.pathname, '/vendor/settings/') ? "nav-link text-white active" : "nav-link text-white"}>
                         {" "}

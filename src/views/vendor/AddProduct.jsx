@@ -304,21 +304,6 @@ function AddProduct() {
                                                                     value={product.description || ''}
                                                                     onChange={handleProductInputChange}
                                                                 />
-                                                                {/* <CKEditor
-                                                                    editor={ClassicEditor}
-                                                                    data="<p>Hello from CKEditor&nbsp;5!</p>"
-                                                                    onReady={editor => {
-                                                                        // You can store the "editor" and use when it is needed.
-                                                                        console.log('Editor is ready to use!', editor);
-                                                                    }}
-                                                                    onChange={(event) => handleProductInputChange()}
-                                                                    onBlur={(event, editor) => {
-                                                                        console.log('Blur.', editor);
-                                                                    }}
-                                                                    onFocus={(event, editor) => {
-                                                                        console.log('Focus.', editor);
-                                                                    }}
-                                                                /> */}
                                                             </div>
                                                             <div className="col-lg-6 mb-2">
                                                                 <label htmlFor="" className="mb-2">

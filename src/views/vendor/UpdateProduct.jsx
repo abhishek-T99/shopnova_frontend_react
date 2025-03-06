@@ -27,11 +27,6 @@ function UpdateProduct() {
 
   const navigate = useNavigate()
 
-  // console.log("specifications: ", specifications)
-  // console.log("colors: ", colors)
-  // console.log("sizes: ", sizes)
-  // console.log("gallery: ", gallery)
-
   const handleAddMore = (setStateFunction) => {
     setStateFunction((prevState) => [...prevState, {}]);
   };
@@ -101,35 +96,6 @@ function UpdateProduct() {
   }, []);
 
 
-
-  // const handleProductFileChange = (event) => {
-
-  //   const file = event.target.files[0];
-
-  //   if (file) {
-  //     const reader = new FileReader();
-
-  //     reader.onloadend = () => {
-  //       setProduct({
-  //         ...product,
-  //         image: {
-  //           file: file,
-  //           preview: reader.result
-  //         }
-  //       });
-  //     };
-
-  //     reader.readAsDataURL(file);
-  //   } else {
-  //     // Handle the case when no file is selected
-  //     setProduct({
-  //       ...product,
-  //       image: product.image
-  //     });
-  //   }
-  // };
-
-
   const handleProductFileChange = (event) => {
     const file = event.target.files[0];
 
@@ -189,16 +155,6 @@ function UpdateProduct() {
     try {
       setIsLoading(true)
       const formData = new FormData();
-
-      // Append product data
-      // Object.entries(product)?.forEach(([key, value]) => {
-      //   console.log(`key: ${key} - value : ${value}`);
-      //   if (key === 'image' && value) {
-      //     formData.append(key, value.file);  // Assuming 'value' is an object with 'file' property
-      //   } else {
-      //     formData.append(key, value);
-      //   }
-      // });
 
       Object.entries(product)?.forEach(([key, value]) => {
         console.log(`key: ${key} - value: ${value}`);

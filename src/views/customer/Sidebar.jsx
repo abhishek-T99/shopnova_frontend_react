@@ -97,11 +97,6 @@ function Sidebar() {
                                 <Link to={'/customer/settings/'} className="fw-bold text-dark"><i className='fas fa-gear fa-spin me-2'></i> Setting</Link>
                             </div>
                         </li>
-                        {/* <li className="list-group-item d-flex justify-content-between align-items-start">
-                            <div className="ms-2 me-auto">
-                                <Link to={'/customer/notifications/'} className="fw-bold text-dark"><i className='fas fa-truck me-2'></i> Track Order</Link>
-                            </div>
-                        </li> */}
                         <li className="list-group-item d-flex justify-content-between align-items-start">
                             <div className="ms-2 me-auto">
                                 <Link to="/logout" className="fw-bold text-danger"><i className='fas fa-sign-out me-2'></i> Logout</Link>

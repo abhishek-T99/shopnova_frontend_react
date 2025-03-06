@@ -30,7 +30,6 @@ function Register() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        // Set isLoading to true when the form is submitted
         setIsLoading(true);
 
         const { error } = await register(fullname, email, phone, password, password2);
@@ -40,8 +39,6 @@ function Register() {
             navigate('/');
             resetForm();
         }
-
-        // Reset isLoading to false when the operation is complete
         setIsLoading(false);
     };
 
@@ -49,7 +46,6 @@ function Register() {
         <>
             <main className="" style={{ marginBottom: 100, marginTop: 50 }}>
                 <div className="container">
-                    {/* Section: Login form */}
                     <section className="">
                         <div className="row d-flex justify-content-center">
                             <div className="col-xl-5 col-md-8">
@@ -159,51 +155,14 @@ function Register() {
                                                     </div>
                                                 </form>
 
-
-                                                {/* <form>
-                                    <div className="text-center mt-4 mb-2">
-                                    <p>Sign up with:</p>
-                                    <button
-                                        type="button"
-                                        className="btn btn-link btn-lg btn-floating"
-                                        data-ripple-color="primary"
-                                    >
-                                        <i className="fab fa-facebook-f" />
-                                    </button>
-                                    <button
-                                        type="button"
-                                        className="btn btn-link btn-lg btn-floating"
-                                        data-ripple-color="primary"
-                                    >
-                                        <i className="fab fa-google" />
-                                    </button>
-                                    <button
-                                        type="button"
-                                        className="btn btn-link btn-lg btn-floating"
-                                        data-ripple-color="primary"
-                                    >
-                                        <i className="fab fa-twitter" />
-                                    </button>
-                                    <button
-                                        type="button"
-                                        className="btn btn-link btn-lg btn-floating"
-                                        data-ripple-color="primary"
-                                    >
-                                        <i className="fab fa-github" />
-                                    </button>
-                                    </div>
-                                    
-                                </form> */}
                                             </div>
 
                                         </div>
-                                        {/* Pills content */}
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </section>
-                    {/* Section: Login form */}
                 </div>
             </main>
         </>

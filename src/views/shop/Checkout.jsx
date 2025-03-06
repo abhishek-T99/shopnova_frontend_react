@@ -306,10 +306,6 @@ function Checkout() {
                         }}
                       />
                     </PayPalScriptProvider>
-
-                    {/* <button type="button" className="btn btn-primary btn-rounded w-100 mt-2">Pay Now (Flutterwave)</button>
-                    <button type="button" className="btn btn-primary btn-rounded w-100 mt-2">Pay Now (Paystack)</button>
-                    <button type="button" className="btn btn-primary btn-rounded w-100 mt-2">Pay Now (Paypal)</button> */}
                   </section>
                 </div>
               </div>

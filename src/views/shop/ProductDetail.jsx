@@ -457,20 +457,6 @@ function ProductDetail() {
                                     Review
                                 </button>
                             </li>
-                            {/* <li className="nav-item" role="presentation">
-                                <button
-                                    className="nav-link"
-                                    id="pills-disabled-tab"
-                                    data-bs-toggle="pill"
-                                    data-bs-target="#pills-disabled"
-                                    type="button"
-                                    role="tab"
-                                    aria-controls="pills-disabled"
-                                    aria-selected="false"
-                                >
-                                    Question &amp; Answer
-                                </button>
-                            </li> */}
                         </ul>
                         <div className="tab-content" id="pills-tabContent">
                             <div
@@ -515,28 +501,6 @@ function ProductDetail() {
                                             <div className="card-body">
                                                 <h5 className="card-title">{vendor?.name}</h5>
                                                 <p className="card-text">{vendor?.description}</p>
-                                                {/* <div className="d-flex mb-2">
-                                                    <ul className="list-inline m-0">
-                                                        <li className="list-inline-item">
-                                                            <i className="fas fa-star text-primary" />
-                                                        </li>
-                                                        <li className="list-inline-item">
-                                                            <i className="fas fa-star text-primary" />
-                                                        </li>
-                                                        <li className="list-inline-item">
-                                                            <i className="fas fa-star text-primary" />
-                                                        </li>
-                                                        <li className="list-inline-item">
-                                                            <i className="fas fa-star text-primary" />
-                                                        </li>
-                                                        <li className="list-inline-item">
-                                                            <i className="fas fa-star-half-alt text-primary" />
-                                                        </li>
-                                                    </ul>
-                                                    <span className="ms-2">4.5</span>
-                                                </div> */}
-                                                {/* <button className="btn btn-primary me-2">Follow</button>
-                                                <button className="btn btn-secondary">Send Message</button> */}
                                             </div>
                                         </div>
                                     </div>

@@ -115,11 +115,6 @@ function Earning() {
                           {earning.month == 12 && <th scope="row">December </th>}
                           <td>{earning.sales_count}</td>
                           <td>{addon.currency_sign} {earning.total_earning.toFixed(2)}</td>
-                          {/* <td>
-                            <a href="" className="btn btn-primary mb-1">
-                              <i className="fas fa-eye" />
-                            </a>
-                          </td> */}
                         </tr>
                       ))}
 

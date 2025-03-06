@@ -174,7 +174,7 @@ function StoreFooter() {
         >
           © 2025 Copyright:  
           <a className="text-dark" href="https://github.com/abhishek-T99">
-            Abhishek Timilsina
+            ShopNova
           </a>
         </div>
         {/* Copyright */}
