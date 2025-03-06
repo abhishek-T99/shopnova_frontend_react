@@ -31,16 +31,6 @@ function Wishlist() {
 
     console.log(wishlist);
 
-    // const handleAddToWishlist = async (product_id) => {
-    //     try {
-    //         await addToWishlist(product_id, userData?.user_id)
-    //         fetchWishlist()
-
-    //     } catch (error) {
-    //         console.log(error);
-    //     }
-    // };
-
     const handleAddToWishlist = async (product_id) => {
         if (!userData?.user_id) {
             Swal.fire({

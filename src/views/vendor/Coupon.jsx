@@ -4,6 +4,7 @@ import { Link, useParams } from 'react-router-dom';
 import apiInstance from '../../utils/axios';
 import UserData from '../plugin/UserData';
 import Sidebar from './Sidebar';
+import Swal from 'sweetalert2';
 
 
 function Coupon() {
@@ -36,7 +37,11 @@ function Coupon() {
                 setStats(res.data[0]);
             })
         } catch (error) {
-            console.error('Error fetching data:', error);
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'There was an error fetching data. Please try again later.',
+            });
         }
     };
 
@@ -60,20 +65,6 @@ function Coupon() {
         console.log(createCoupons);
     }
 
-    // const handleCreateCoupon = async (e) => {
-    //     e.preventDefault()
-    //     const formdata = new FormData()
-
-    //     formdata.append("vendor_id", userData?.vendor_id)
-    //     formdata.append("code", createCoupons.code)
-    //     formdata.append("discount", createCoupons.discount)
-    //     formdata.append("active", createCoupons.active)
-
-    //     await axios.post(`vendor-coupon-create/${userData?.vendor_id}/`, formdata).then((res) => {
-    //         console.log(res.data);
-    //     })
-    //     await fetchData();
-    // }
 
     const handleCreateCoupon = async (e) => {
         e.preventDefault();
@@ -95,8 +86,19 @@ function Coupon() {
     
             // Optionally fetch updated data
             await fetchData();
+
+            Swal.fire({
+                icon: 'success',
+                title: 'Coupon Created!',
+                text: 'The coupon has been created successfully.',
+            });
         } catch (error) {
             console.error("Error creating coupon:", error);
+            Swal.fire({
+                icon: 'error',
+                title: 'Error!',
+                text: 'There was an error creating the coupon. Please try again with different code.',
+            });
         }
     };
     
