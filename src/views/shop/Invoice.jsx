@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import '../styles/InvoiceStyle.css'
 
 import apiInstance from '../../utils/axios';
+import Addon from '../plugin/Addon';
 
 
 function Invoice() {
@@ -10,6 +11,7 @@ function Invoice() {
     const [orderItems, setOrderItems] = useState([])
     const axios = apiInstance
     const param = useParams()
+    const addon = Addon()
 
     useEffect(() => {
         axios.get(`checkout/${param?.order_oid}/`).then((res) => {
@@ -57,10 +59,10 @@ function Invoice() {
                                                 ShopNova<span className="text-warning">.</span>
                                             </h5>
                                             <p>
-                                                <i className="fa fa-phone" /> +977 9840196929
+                                                <i className="fa fa-phone" /> +977 01-4562125
                                             </p>
                                             <p>
-                                                <i className="fa fa-envelope" /> timilsina.abhishek55@gmail.com
+                                                <i className="fa fa-envelope" /> shopnova@info.com
                                             </p>
                                             <p>
                                                 <i className="fa fa-location-arrow" /> Kathmandu, Nepal
@@ -122,16 +124,16 @@ function Invoice() {
                                                 {order?.product?.title}
                                             </td>
                                             <td className="col-md-2">
-                                                ${order?.price}
+                                            {addon.currency_sign} {order?.price}
                                             </td>
                                             <td className="col-md-2">
                                                 {order?.qty}
                                             </td>
                                             <td className="col-md-2">
-                                                ${order?.sub_total}
+                                                {addon.currency_sign} {order?.sub_total}
                                             </td>
                                             <td className="col-md-2">
-                                                ${order?.saved}
+                                                {addon.currency_sign} {order?.saved}
                                             </td>
                                         </tr>
                                     ))}
@@ -147,24 +149,24 @@ function Invoice() {
                                         <h5>Summary</h5>
                                         <p className="mb-2">
                                             <b>Sub Total: </b>
-                                            ${order.sub_total}
+                                            {addon.currency_sign} {order.sub_total}
                                         </p>
                                         <p className="mb-2">
                                             <b>Shipping: </b>
-                                            ${order.shipping_amount}
+                                            {addon.currency_sign} {order.shipping_amount}
                                         </p>
                                         <p className="mb-2">
                                             <b>Tax: </b>
-                                            ${order.tax_fee}
+                                            {addon.currency_sign} {order.tax_fee}
                                         </p>
                                         <p className="mb-2">
                                             <b>Service Fee: </b>
-                                            ${order.service_fee}
+                                            {addon.currency_sign} {order.service_fee}
                                         </p>
                                         <br />
                                         <p className="mb-2">
                                             <b>Total: </b>
-                                            ${order.total}
+                                            {addon.currency_sign} {order.total}
                                         </p>
 
                                     </div>
