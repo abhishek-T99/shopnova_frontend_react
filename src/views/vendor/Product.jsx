@@ -6,11 +6,15 @@ import UserData from '../plugin/UserData';
 import Sidebar from './Sidebar';
 import { deleteProduct } from '../plugin/DeleteProduct';
 
+import Addon from '../plugin/Addon';
+
 function Products() {
     const [products, setProducts] = useState([])
 
     const axios = apiInstance
     const userData = UserData()
+
+    const addon = Addon()
 
     if (UserData()?.vendor_id === 0) {
         window.location.href = '/vendor/register/'
@@ -128,7 +132,7 @@ function Products() {
                                     <tr key={index}>
                                         <th scope="row">#{p.sku}</th>
                                         <td>{p.title}</td>
-                                        <td>${p.price}</td>
+                                        <td>{addon.currency_sign} {p.price}</td>
                                         <td>{p.stock_qty}</td>
                                         <td>{p.order_count}</td>
                                         <td>{p?.status?.toUpperCase()}</td>

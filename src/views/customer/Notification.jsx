@@ -3,6 +3,7 @@ import Sidebar from './Sidebar'
 import apiInstance from '../../utils/axios';
 import UserData from '../plugin/UserData';
 import moment from 'moment';
+import Addon from '../plugin/Addon';
 
 
 function Notifications() {
@@ -12,6 +13,8 @@ function Notifications() {
 
     const axios = apiInstance
     const userData = UserData()
+
+    const addon = Addon()
 
     useEffect(() => {
         axios.get(`customer/notification/${userData?.user_id}/`).then((res) => {
@@ -49,10 +52,10 @@ function Notifications() {
                                                             <p className="mb-1">
                                                                 Your order #{noti?.order?.oid} was successfull
                                                             </p>
-                                                            <small className=''>Total: ${noti?.order?.total}</small> <br />
-                                                            <small className=''>Shipping: ${noti?.order?.shipping_amount}</small> <br />
-                                                            <small className=''>Tax: ${noti?.order?.tax_fee}</small> <br />
-                                                            <small className=''>Service Fee: ${noti?.order?.service_fee}</small> <br />
+                                                            <small className=''>Total: {addon.currency_sign} {noti?.order?.total}</small> <br />
+                                                            <small className=''>Shipping: {addon.currency_sign} {noti?.order?.shipping_amount}</small> <br />
+                                                            <small className=''>Tax: {addon.currency_sign} {noti?.order?.tax_fee}</small> <br />
+                                                            <small className=''>Service Fee: {addon.currency_sign} {noti?.order?.service_fee}</small> <br />
                                                         </a>
                                                     ))}
 

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom';
 
 import apiInstance from '../../utils/axios';
+import Addon from '../plugin/Addon';
 
 
 
@@ -13,6 +14,7 @@ function PaymentSuccess() {
 
     const axios = apiInstance
     const param = useParams()
+    const addon  = Addon()
 
     const urlParams = new URLSearchParams(window.location.search);
     const sessionId = urlParams.get('session_id');
@@ -232,28 +234,28 @@ function PaymentSuccess() {
                                         />
                                         <div className="d-flex justify-content-between">
                                             <p className="fw-bold mb-0">Subtotal</p>
-                                            <p className="text-muted mb-0">${order.sub_total}</p>
+                                            <p className="text-muted mb-0">{addon.currency_sign} {order.sub_total}</p>
                                         </div>
                                         <div className="d-flex justify-content-between">
                                             <p className="small mb-0">Shipping Fee</p>
-                                            <p className="small mb-0">${order.shipping_amount}</p>
+                                            <p className="small mb-0">{addon.currency_sign} {order.shipping_amount}</p>
                                         </div>
                                         <div className="d-flex justify-content-between">
                                             <p className="small mb-0">Service Fee</p>
-                                            <p className="small mb-0">${order.service_fee}</p>
+                                            <p className="small mb-0">{addon.currency_sign} {order.service_fee}</p>
                                         </div>
                                         <div className="d-flex justify-content-between">
                                             <p className="small mb-0">Tax</p>
-                                            <p className="small mb-0">${order.tax_fee}</p>
+                                            <p className="small mb-0">{addon.currency_sign} {order.tax_fee}</p>
                                         </div>
                                         <div className="d-flex justify-content-between">
                                             <p className="small mb-0">Discount</p>
-                                            <p className="small mb-0">-${order.saved}</p>
+                                            <p className="small mb-0">-{addon.currency_sign} {order.saved}</p>
                                         </div>
                                         <div className="d-flex justify-content-between mt-4">
                                             <p className="fw-bold">Total</p>
                                             <p className="fw-bold" style={{ color: "#35558a" }}>
-                                                ${order.total}
+                                                {addon.currency_sign} {order.total}
                                             </p>
                                         </div>
                                     </div>

@@ -8,6 +8,7 @@ import apiInstance from '../../utils/axios';
 import UserData from '../plugin/UserData';
 import Sidebar from './Sidebar';
 import Swal from 'sweetalert2';
+import Addon from '../plugin/Addon';
 
 
 function Dashboard() {
@@ -18,7 +19,7 @@ function Dashboard() {
   const [orderChartData, setOrderChartData] = useState(null)
   const [productsChartData, setProductsChartData] = useState(null)
 
-
+  const addon = Addon()
   const axios = apiInstance
   const userData = UserData()
   const navigate = useNavigate()
@@ -162,7 +163,7 @@ function Dashboard() {
                     <i className="bi bi-currency-dollar fa-5x" />
                   </div>
                   <h6 className="text-uppercase">Revenue</h6>
-                  <h1 className="display-1">${stats?.revenue || 0}</h1>
+                  <h1 className="display-1">{addon.currency_sign} {stats?.revenue || 0}</h1>
                 </div>
               </div>
             </div>
@@ -221,7 +222,7 @@ function Dashboard() {
                       <tr key={index}>
                         <th scope="row">#{p.sku}</th>
                         <td>{p.title}</td>
-                        <td>${p.price}</td>
+                        <td>{addon.currency_sign} {p.price}</td>
                         <td>{p.stock_qty}</td>
                         <td>{p.order_count}</td>
                         <td>{p?.status?.toUpperCase()}</td>

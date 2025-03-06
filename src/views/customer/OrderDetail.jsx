@@ -3,6 +3,7 @@ import Sidebar from './Sidebar'
 import apiInstance from '../../utils/axios';
 import UserData from '../plugin/UserData';
 import { Link, useParams } from 'react-router-dom';
+import Addon from '../plugin/Addon';
 
 function OrderDetail() {
   const [order, setOrder] = useState([])
@@ -12,6 +13,7 @@ function OrderDetail() {
   const axios = apiInstance
   const userData = UserData()
   const param = useParams()
+  const addon = Addon()
   console.log(param);
 
   useEffect(() => {
@@ -55,7 +57,7 @@ function OrderDetail() {
                                   <div className="">
                                     <p className="mb-1">Total</p>
                                     <h2 className="mb-0">
-                                      ${order.total}
+                                      {addon.currency_sign} {order.total}
                                       <span
                                         className=""
                                         style={{ fontSize: "0.875rem" }}
@@ -119,7 +121,7 @@ function OrderDetail() {
                                   <div className="">
                                     <p className="mb-1">Shipping Amount</p>
                                     <h2 className="mb-0">
-                                      ${order.shipping_amount}
+                                      {addon.currency_sign} {order.shipping_amount}
                                       <span
                                         className=""
                                         style={{ fontSize: "0.875rem" }}
@@ -140,7 +142,7 @@ function OrderDetail() {
                                   <div className="">
                                     <p className="mb-1">Tax Fee</p>
                                     <h2 className="mb-0">
-                                      ${order.tax_fee}
+                                      {addon.currency_sign} {order.tax_fee}
 
                                       <span
                                         className=""
@@ -162,7 +164,7 @@ function OrderDetail() {
                                   <div className="">
                                     <p className="mb-1">Service Fee</p>
                                     <h2 className="mb-0">
-                                      ${order.service_fee}
+                                      {addon.currency_sign} {order.service_fee}
                                       <span
                                         className=""
                                         style={{ fontSize: "0.875rem" }}
@@ -183,7 +185,7 @@ function OrderDetail() {
                                   <div className="">
                                     <p className="mb-1">Discount Fee</p>
                                     <h2 className="mb-0">
-                                      -${order.saved}
+                                      -{addon.currency_sign} {order.saved}
                                       <span
                                         className=""
                                         style={{ fontSize: "0.875rem" }}
@@ -229,16 +231,16 @@ function OrderDetail() {
                                       </div>
                                     </td>
                                     <td>
-                                      <p className="fw-normal mb-1">${order.product.price}</p>
+                                      <p className="fw-normal mb-1">{addon.currency_sign} {order.product.price}</p>
                                     </td>
                                     <td>
                                       <p className="fw-normal mb-1">{order.qty}</p>
                                     </td>
                                     <td>
-                                      <span className="fw-normal mb-1">${order.sub_total}</span>
+                                      <span className="fw-normal mb-1">{addon.currency_sign} {order.sub_total}</span>
                                     </td>
                                     <td>
-                                      <span className="fw-normal mb-1 text-danger"> -${order.saved}</span>
+                                      <span className="fw-normal mb-1 text-danger"> -{addon.currency_sign} {order.saved}</span>
                                     </td>
                                     <td>
                                       {order.tracking_id == null || order.tracking_id == 'undefined'

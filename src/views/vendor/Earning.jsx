@@ -5,12 +5,14 @@ import { Line } from "react-chartjs-2";
 import apiInstance from '../../utils/axios';
 import UserData from '../plugin/UserData';
 import Sidebar from './Sidebar';
+import Addon from '../plugin/Addon';
 
 
 function Earning() {
   const [earningStats, setEarningStats] = useState(null)
   const [earningStatsTracker, setEarningTracker] = useState([])
   const [earningChartData, setEarningChartData] = useState(null)
+  const addon = Addon()
 
   if (UserData()?.vendor_id === 0) {
     window.location.href = '/vendor/register/'
@@ -67,7 +69,7 @@ function Earning() {
                         <i className="bi bi-currency-dollar fa-5x" />
                       </div>
                       <h6 className="text-uppercase">Total Sales</h6>
-                      <h1 className="display-1"><b>${earningStats?.total_revenue || "0.00"}</b></h1>
+                      <h1 className="display-1"><b>{addon.currency_sign} {earningStats?.total_revenue || "0.00"}</b></h1>
                     </div>
                   </div>
                 </div>
@@ -78,7 +80,7 @@ function Earning() {
                         <i className="bi bi-currency-dollar fa-5x" />
                       </div>
                       <h6 className="text-uppercase">Monthly Earning</h6>
-                      <h1 className="display-1"><b>${earningStats?.monthly_revenue || "0.00"}</b></h1>
+                      <h1 className="display-1"><b>{addon.currency_sign} {earningStats?.monthly_revenue || "0.00"}</b></h1>
                     </div>
                   </div>
                 </div>
@@ -112,7 +114,7 @@ function Earning() {
                           {earning.month == 11 && <th scope="row">November </th>}
                           {earning.month == 12 && <th scope="row">December </th>}
                           <td>{earning.sales_count}</td>
-                          <td>${earning.total_earning.toFixed(2)}</td>
+                          <td>{addon.currency_sign} {earning.total_earning.toFixed(2)}</td>
                           {/* <td>
                             <a href="" className="btn btn-primary mb-1">
                               <i className="fas fa-eye" />

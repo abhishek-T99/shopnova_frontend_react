@@ -367,7 +367,7 @@ function Cart() {
                                                         <label className="form-label" htmlFor="form6Example1"><i className='fas fa-envelope'></i> Email</label>
                                                         <input
                                                             type="text"
-                                                            id="form6Example1"
+                                                            id="checkout_email"
                                                             className="form-control"
                                                             name='email'
                                                             onChange={handleChange}
@@ -381,7 +381,7 @@ function Cart() {
                                                         <label className="form-label" htmlFor="form6Example1"><i className='fas fa-phone'></i> Mobile</label>
                                                         <input
                                                             type="text"
-                                                            id="form6Example1"
+                                                            id="checkout_mobile"
                                                             className="form-control"
                                                             name='mobile'
                                                             onChange={handleChange}
@@ -399,7 +399,7 @@ function Cart() {
                                                         <label className="form-label" htmlFor="form6Example1"> Address</label>
                                                         <input
                                                             type="text"
-                                                            id="form6Example1"
+                                                            id="checkout_address"
                                                             className="form-control"
                                                             name='address'
                                                             onChange={handleChange}
@@ -412,11 +412,11 @@ function Cart() {
                                                         <label className="form-label" htmlFor="form6Example1"> City</label>
                                                         <input
                                                             type="text"
-                                                            id="form6Example1"
+                                                            id="checkout_city"
                                                             className="form-control"
                                                             name='city'
                                                             onChange={handleChange}
-                                                            value={city}
+                                                            value={city || ""}
                                                         />
                                                     </div>
                                                 </div>
@@ -426,7 +426,7 @@ function Cart() {
                                                         <label className="form-label" htmlFor="form6Example1"> State</label>
                                                         <input
                                                             type="text"
-                                                            id="form6Example1"
+                                                            id="checkout_state"
                                                             className="form-control"
                                                             name='state'
                                                             onChange={handleChange}
@@ -439,7 +439,7 @@ function Cart() {
                                                         <label className="form-label" htmlFor="form6Example1"> Country</label>
                                                         <input
                                                             type="text"
-                                                            id="form6Example1"
+                                                            id="checkout_country"
                                                             className="form-control"
                                                             name='country'
                                                             onChange={handleChange}

@@ -4,12 +4,15 @@ import apiInstance from '../../utils/axios';
 import UserData from '../plugin/UserData';
 import moment from 'moment';
 import { Link } from 'react-router-dom';
+import Addon from '../plugin/Addon'
 
 function Orders() {
     const [orders, setOrders] = useState([])
 
     const axios = apiInstance
     const userData = UserData()
+
+    const addon = Addon()
     
 
     useEffect(() => {
@@ -154,7 +157,7 @@ function Orders() {
                                                                 <p className="fw-normal mb-1">{o.order_status}</p>
                                                             </td>
                                                             <td>
-                                                                <span className="fw-normal mb-1">${o.total}</span>
+                                                                <span className="fw-normal mb-1">{addon.currency_sign} {o.total}</span>
                                                             </td>
                                                             <td>
                                                                 <Link className="btn btn-link btn-sm btn-rounded" to={`/customer/order/detail/${o.oid}/`}>
