@@ -1,12 +1,21 @@
 import { React, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom'
 import UseProfileData from '../plugin/UseProfileData'
+import apiInstance from '../../utils/axios';
+import UserData from '../plugin/UserData';
 
 
 function Sidebar() {
 
+    const [orders, setOrders] = useState([])
+    const [wishlist, setWishlist] = useState([])
+    const [notification, setNotifications] = useState([])
+    const axios = apiInstance
+
     const userProfile = UseProfileData()
     let [loading, setLoading] = useState(true);
+
+    const userData = UserData()
 
     useEffect(() => {
         if (userProfile) {
@@ -14,6 +23,33 @@ function Sidebar() {
         }
 
     })
+
+    useEffect(() => {
+            axios.get(`customer/orders/${userData?.user_id}/`).then((res) => {
+                setOrders(res.data)
+            })
+    }, [])
+
+    const fetchWishlist = async () => {
+        try {
+            const response = await axios.get(`customer/wishlist/${userData?.user_id}/`);
+            setWishlist(response.data);
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    useEffect(() => {
+        axios.get(`customer/wishlist/${userData?.user_id}/`).then((res) => {
+            setWishlist(res.data)
+        })
+    }, [])
+
+    useEffect(() => {
+            axios.get(`customer/notification/${userData?.user_id}/`).then((res) => {
+                setNotifications(res.data);
+            })
+    }, [])
 
     return (
         <div className="col-lg-3">
@@ -42,19 +78,19 @@ function Sidebar() {
                             <div className="ms-2 me-auto">
                                 <Link to={'/customer/orders/'} className="fw-bold text-dark"><i className='fas fa-shopping-cart me-2'></i>Orders</Link>
                             </div>
-                            <span className="badge bg-primary rounded-pill">14</span>
+                            <span className="badge bg-primary rounded-pill">{orders.length}</span>
                         </li>
                         <li className="list-group-item d-flex justify-content-between align-items-start">
                             <div className="ms-2 me-auto">
                                 <Link to={'/customer/wishlist/'} className="fw-bold text-dark"><i className='fas fa-heart fa-fade me-2'></i> Wishlist</Link>
                             </div>
-                            <span className="badge bg-primary rounded-pill">14</span>
+                            <span className="badge bg-primary rounded-pill">{wishlist.length}</span>
                         </li>
                         <li className="list-group-item d-flex justify-content-between align-items-start">
                             <div className="ms-2 me-auto">
                                 <Link to={'/customer/notifications/'} className="fw-bold text-dark"><i className='fas fa-bell fa-shake me-2'></i> Notification</Link>
                             </div>
-                            <span className="badge bg-primary rounded-pill">14</span>
+                            <span className="badge bg-primary rounded-pill">{notification.length}</span>
                         </li>
                         <li className="list-group-item d-flex justify-content-between align-items-start">
                             <div className="ms-2 me-auto">
